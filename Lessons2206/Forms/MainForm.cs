@@ -192,5 +192,13 @@ namespace Lessons2206.Forms
         {
 
         }
+
+        private void CreateTable_Click(object sender, EventArgs e)
+        {
+            CreateTable creatb = new CreateTable();
+            creatb.Show();
+            
+
+        }
     }
 }

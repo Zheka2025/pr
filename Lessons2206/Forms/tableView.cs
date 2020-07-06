@@ -54,21 +54,39 @@ namespace Lessons2206.Forms
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            //StringBuilder sb = new StringBuilder();
-            //sb.Append($"INSERT INTO {table_name} (");
-            //for (int i = 0; i < tableData_dg.ColumnCount; i++)
-            //{
-            //    if(i == tableData_dg.ColumnCount-1) sb.Append(tableData_dg.Columns[i].HeaderText);
-            //    else sb.Append(tableData_dg.Columns[i].HeaderText + ","); 
-
-            //}
-            //sb.Append(") VALUES (");
-            //for (int i = 0; i < tableData_dg.ColumnCount; i++)
-            //{
-
-            //}
-            //adapter.InsertCommand = new SqlCommand($"INSERT INTO {table_name}");
+            
             adapter.Update(table_ds);
+            table_ds.Clear();
+            adapter.Fill(table_ds);
+            //table_ds.Dispose();
+            //adapter.Dispose();
+
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int rowInd = tableData_dg.SelectedCells[0].RowIndex;
+                DialogResult res = MessageBox.Show("It will not recover!", "warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (res == DialogResult.OK)
+                {
+                    int id = (int)table_ds.Tables[0].Rows[rowInd].ItemArray[0];
+                    string cmd = $"DELETE FROM {table_name} WHERE id= {id}";
+                    SqlCommand cmd_o = new SqlCommand();
+                    cmd_o.Connection = Program.db.cnn;
+                    cmd_o.CommandText = cmd;
+                    cmd_o.ExecuteNonQuery();
+
+                    table_ds.Tables[0].Rows.RemoveAt(rowInd);
+                }
+            
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

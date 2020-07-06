@@ -47,6 +47,7 @@
             this.result_dg = new System.Windows.Forms.DataGridView();
             this.query_tb = new FastColoredTextBoxNS.FastColoredTextBox();
             this.databaseInfo_tab = new System.Windows.Forms.TabPage();
+            this.CreateTable = new System.Windows.Forms.ToolStripMenuItem();
             this.status_pn.SuspendLayout();
             this.menu_st.SuspendLayout();
             this.tabNameWindow.SuspendLayout();
@@ -82,7 +83,8 @@
             // 
             this.menu_st.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settings_btn,
-            this.aboutHeader_btn});
+            this.aboutHeader_btn,
+            this.CreateTable});
             this.menu_st.Location = new System.Drawing.Point(0, 0);
             this.menu_st.Name = "menu_st";
             this.menu_st.Size = new System.Drawing.Size(733, 24);
@@ -185,7 +187,7 @@
             this.send_query_btn.Name = "send_query_btn";
             this.send_query_btn.Size = new System.Drawing.Size(121, 189);
             this.send_query_btn.TabIndex = 2;
-            this.send_query_btn.Text = "button1";
+            this.send_query_btn.Text = "Выполнить";
             this.send_query_btn.UseVisualStyleBackColor = true;
             this.send_query_btn.Click += new System.EventHandler(this.send_query_btn_Click);
             // 
@@ -241,6 +243,13 @@
             this.databaseInfo_tab.Text = "Информация";
             this.databaseInfo_tab.UseVisualStyleBackColor = true;
             // 
+            // CreateTable
+            // 
+            this.CreateTable.Name = "CreateTable";
+            this.CreateTable.Size = new System.Drawing.Size(110, 20);
+            this.CreateTable.Text = "Создать таблицу";
+            this.CreateTable.Click += new System.EventHandler(this.CreateTable_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +300,7 @@
         private FastColoredTextBoxNS.FastColoredTextBox query_tb;
         private System.Windows.Forms.Button send_query_btn;
         private System.Windows.Forms.DataGridView result_dg;
+        private System.Windows.Forms.ToolStripMenuItem CreateTable;
     }
 }
 
