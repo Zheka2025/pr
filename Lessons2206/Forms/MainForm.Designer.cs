@@ -162,6 +162,7 @@
             this.tables_dg.Name = "tables_dg";
             this.tables_dg.Size = new System.Drawing.Size(719, 459);
             this.tables_dg.TabIndex = 0;
+            this.tables_dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tables_dg_CellContentClick);
             this.tables_dg.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tables_dg_CellClick);
             // 
             // queryTB_tab
@@ -218,6 +219,7 @@
             this.query_tb.CharWidth = 8;
             this.query_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.query_tb.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.query_tb.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.query_tb.IsReplaceMode = false;
             this.query_tb.Location = new System.Drawing.Point(-4, 0);
             this.query_tb.Name = "query_tb";
@@ -228,6 +230,7 @@
             this.query_tb.TabIndex = 0;
             this.query_tb.Text = "USE";
             this.query_tb.Zoom = 100;
+            this.query_tb.Load += new System.EventHandler(this.query_tb_Load);
             // 
             // databaseInfo_tab
             // 

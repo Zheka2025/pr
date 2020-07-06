@@ -87,7 +87,7 @@ namespace Lessons2206.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string sql = "SELEC name, create_date FROM sys.objects WHERE type in(N'U')";
+            string sql = "SELECT name, create_date FROM sys.objects WHERE type in(N'U')";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, Program.db.cnn);
             tables_ds = new DataSet();
          
@@ -156,7 +156,7 @@ namespace Lessons2206.Forms
         }
         private void updateTables()
         {
-            string sql = "SELEC name, create_date FROM sys.objects WHERE type in(N'U')";
+            string sql = "SELECT name, create_date FROM sys.objects WHERE type in(N'U')";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, Program.db.cnn);
             tables_ds = new DataSet();
 
@@ -179,6 +179,16 @@ namespace Lessons2206.Forms
         }
 
         private void menu_st_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void tables_dg_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void query_tb_Load(object sender, EventArgs e)
         {
 
         }
