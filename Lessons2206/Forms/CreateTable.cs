@@ -21,14 +21,17 @@ namespace Lessons2206.Forms
         {
             if(textBox1.Text == "")
             {
+                label5.Text = "Придумай имя таблице!";
+            }
+            else
+            {
                 label5.Text = " ";
             }
-         
         }
 
         private void CreateTable_Load(object sender, EventArgs e)
         {
-            label5.Text = "Придумайте имя таблице!";
+          
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
